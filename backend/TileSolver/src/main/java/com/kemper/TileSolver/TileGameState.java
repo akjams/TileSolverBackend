@@ -8,9 +8,9 @@ public class TileGameState extends AbstractGameState {
 	private final int SIZE;
 	private int[][] board;
 	
-	public TileGameState(int size, int[][] board) {
-		validateBoard(size, board);
-		this.SIZE = size;
+	public TileGameState(int[][] board) {
+		validateBoard(board);
+		this.SIZE = board.length;
 		this.board = board;
 	}
 	
@@ -25,8 +25,8 @@ public class TileGameState extends AbstractGameState {
 		}
 	}
 	
-	private void validateBoard(int size, int[][] board) {
-		if (! (board.length == size && board[0].length == size)) {
+	private void validateBoard(int[][] board) {
+		if (board.length != board[0].length) {
 			throw new IllegalArgumentException("size must equal board length");
 		}
 		//TODO check board has #'s 0-size

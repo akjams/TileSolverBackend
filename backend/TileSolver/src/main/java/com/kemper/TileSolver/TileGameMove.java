@@ -5,8 +5,8 @@ package com.kemper.TileSolver;
  *
  */
 public class TileGameMove implements GameMove {
-	private TileLocation start;
-	private TileLocation end;
+	private final TileLocation start;
+	private final TileLocation end;
 	
 	public TileGameMove(TileLocation start, TileLocation end) {
 		this.start = start;

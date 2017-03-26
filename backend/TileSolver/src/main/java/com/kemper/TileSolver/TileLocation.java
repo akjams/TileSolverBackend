@@ -5,8 +5,8 @@ package com.kemper.TileSolver;
  *
  */
 public class TileLocation {
-	private int row;
-	private int col;
+	private final int row;
+	private final int col;
 	
 	public TileLocation(int row, int col) {
 		this.row = row;

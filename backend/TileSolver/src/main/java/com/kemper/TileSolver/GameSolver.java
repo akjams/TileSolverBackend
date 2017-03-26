@@ -1,5 +1,7 @@
 package com.kemper.TileSolver;
 
+import java.util.List;
+
 public interface GameSolver {
-	public Iterable<GameMove> solve(GameState gs);
+	public List<? extends GameMove> solve(GameState gs);
 }
