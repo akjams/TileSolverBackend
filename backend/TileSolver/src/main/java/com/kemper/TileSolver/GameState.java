@@ -39,4 +39,9 @@ public interface GameState {
 	 */
 	public void setParent(GameState parent);
 	
+	/** Pretty String for debugging
+	 *  @return a pretty toString()
+	 */
+	public String prettyString();
+	
 }

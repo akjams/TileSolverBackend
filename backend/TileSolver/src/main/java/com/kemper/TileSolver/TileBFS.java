@@ -16,7 +16,7 @@ public class TileBFS implements GameSolver {
 	}
 
 	@Override
-	public Iterable<? extends GameState> solve(GameState gs) {
+	public List<? extends GameState> solve(GameState gs) {
 		
 		//BFS on gs and set all of the parents correctly
 		GameState solutionState = bfs(gs);
@@ -24,11 +24,18 @@ public class TileBFS implements GameSolver {
 		//Stack up the path back to the original node
 		Stack<GameState> solution = new Stack<GameState>();
 		GameState current = solutionState;
+		solution.push(current);
 		while (current != gs) {
-			solution.push(current);
 			current = current.getParent();
+			solution.push(current);
 		}
-		return solution;
+		
+		//put stack into LINKED LIST
+		List<GameState> solutionList = new LinkedList<>();
+		while (! solution.empty()) {
+			solutionList.add(solution.pop());
+		}
+		return solutionList;
 	}
 	
 	private GameState bfs(GameState gs) {
@@ -38,6 +45,7 @@ public class TileBFS implements GameSolver {
 		
 		while (!bfsQ.isEmpty()) {
 			GameState current = bfsQ.poll();
+			System.out.println(current.prettyString());
 			if (current.isGoal()) {
 				return current;
 			}

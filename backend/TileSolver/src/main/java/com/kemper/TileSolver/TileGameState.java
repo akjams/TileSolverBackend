@@ -1,6 +1,7 @@
 package com.kemper.TileSolver;
 
 import java.util.List;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class TileGameState extends AbstractGameState {
@@ -65,12 +66,12 @@ public class TileGameState extends AbstractGameState {
 			moves.add(new TileGameMove(start, end));
 		}
 		//add up
-		if (blank.getRow() != 0) {
+		if (blank.getCol() != 0) {
 			TileLocation end = new TileLocation(blank.getRow(), blank.getCol() - 1);
 			moves.add(new TileGameMove(start, end));
 		}
 		//add down
-		if (blank.getRow() != SIZE - 1) {
+		if (blank.getCol() != SIZE - 1) {
 			TileLocation end = new TileLocation(blank.getRow(), blank.getCol() + 1);
 			moves.add(new TileGameMove(start, end));
 		}
@@ -129,6 +130,23 @@ public class TileGameState extends AbstractGameState {
 			}
 		}
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return Arrays.deepToString(board);
+	}
+	
+	public String prettyString() {
+		String pad = "----------\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append(pad);
+		for (int i = 0; i < SIZE; i++) {
+			sb.append(Arrays.toString(board[i]));
+			sb.append("\n");
+		}
+		sb.append(pad);
+		return sb.toString();
 	}
 
 }

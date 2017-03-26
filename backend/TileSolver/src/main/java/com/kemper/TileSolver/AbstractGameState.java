@@ -43,5 +43,10 @@ public abstract class AbstractGameState implements GameState {
 		}
 		return false;
 	}
+	
+	@Override
+	public String prettyString() {
+		return this.toString();
+	}
 
 }
