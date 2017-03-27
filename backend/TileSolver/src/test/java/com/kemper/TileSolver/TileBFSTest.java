@@ -17,20 +17,11 @@ public class TileBFSTest {
 	};
 	
 	
-	private GameState game0;
-	private List<GameState> solutionList0;
+
 	
 	private GameState game1;
 	private List<GameState> solutionList1;
 	
-//	@Before
-//	public void setupSolu0() {
-//		int[][] board1 = { 
-//				{1, 2, 3},
-//				{4, 5, 0},
-//				{7, 8, 6}
-//		};
-//	}
 
 	@Before
 	public void setupSolu1() {
@@ -60,6 +51,14 @@ public class TileBFSTest {
 		TileBFS bfs = new TileBFS();
 		List<? extends GameState> bfsSolu = bfs.solve(game1);
 		assertEquals(solutionList1, bfsSolu);
+	}
+	
+	@Test
+	public void lamdaHandlerBFS() {
+		String gameString = "1 2 0 4 5 3 7 8 6";
+		TileLamdaHandler tlh = new TileLamdaHandler();
+		System.out.println(solutionList1);
+		assertEquals(solutionList1.toString(), tlh.handleRequest(gameString, null));
 	}
 
 }

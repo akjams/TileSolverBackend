@@ -46,8 +46,8 @@ public class TileBFS implements GameSolver {
 		while (!bfsQ.isEmpty()) {
 			GameState current = bfsQ.poll();
 			//TESTING
-			System.out.println(current.prettyString());
-			System.out.println(current.toJSON());
+//			System.out.println(current.prettyString());
+//			System.out.println(current.toJSON());
 			if (current.isGoal()) {
 				return current;
 			}

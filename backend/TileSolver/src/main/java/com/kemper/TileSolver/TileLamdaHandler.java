@@ -13,10 +13,8 @@ public class TileLamdaHandler implements RequestHandler<String, String> {
 
     @Override
     public String handleRequest(String input, Context context) {
-        context.getLogger().log("Input: " + input);
-        if (input == null) {
-        	input = "NONAME";
-        }
+        //context.getLogger().log("Input: " + input);
+
         
         try {
         	TileGameState tgs = parseTGS(input);
@@ -34,7 +32,7 @@ public class TileLamdaHandler implements RequestHandler<String, String> {
     // 1, 2, 3
     // 4, 5, 6
     // 7, 8, 0
-    private static TileGameState parseTGS(String input) {
+    static TileGameState parseTGS(String input) {
     	Scanner in = new Scanner(input);
     	Queue<Integer> nums = new LinkedList<>();
     	while (in.hasNextInt()) {
@@ -55,7 +53,7 @@ public class TileLamdaHandler implements RequestHandler<String, String> {
     	return new TileGameState(board);
     }
     
-    private static boolean isPerfectSquare(int x) {
+    static boolean isPerfectSquare(int x) {
     	int sqrt = (int) Math.sqrt(x);
     	return x == sqrt * sqrt;
     }
