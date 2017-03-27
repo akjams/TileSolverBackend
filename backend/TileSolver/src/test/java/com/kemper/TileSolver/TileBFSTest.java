@@ -53,7 +53,6 @@ public class TileBFSTest {
 		solutionList1.add(game1);
 		solutionList1.add(tgs2);
 		solutionList1.add(tgs3);
-		
 	}
 	
 	@Test
