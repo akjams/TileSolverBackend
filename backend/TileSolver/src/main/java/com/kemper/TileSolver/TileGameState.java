@@ -149,4 +149,14 @@ public class TileGameState extends AbstractGameState {
 		return sb.toString();
 	}
 
+	@Override
+	public String toJSON() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("{");
+		sb.append("\"board\": ");
+		sb.append(Arrays.deepToString(board));
+		sb.append("}");
+		return sb.toString();
+	}
+
 }

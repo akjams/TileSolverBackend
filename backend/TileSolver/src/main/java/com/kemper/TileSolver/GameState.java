@@ -44,4 +44,9 @@ public interface GameState {
 	 */
 	public String prettyString();
 	
+	/** Put into portable JSON format
+	 * @return JSON representation of Game State
+	 */
+	public String toJSON();
+	
 }
